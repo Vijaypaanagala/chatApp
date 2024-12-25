@@ -1,0 +1,26 @@
+.chat-item {
+  transition: background-color 0.0000001s ease, box-shadow 0.0000001s ease;
+}
+.chat-item:hover {
+  background-color: #f1f1f1; /* Light gray on hover */
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+}
+
+.chat-item:active {
+  background-color: #e0e0e0; /* Slightly darker gray on active click */
+}
+
+.chat-item.active-chat {
+  background-color: #d3d1d1; /* Blue color for active chat */
+   /* White text for better contrast */
+}
+.badge {
+  font-size: 0.9rem;
+  display: inline-flex;
+  align-items: center;
+}
+.badge .fa-times {
+  margin-left: 5px;
+  cursor: pointer;
+  color: #fff;
+}

@@ -1,0 +1,80 @@
+/* General Styles */
+.login-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #e9ecef;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Card Styles */
+.login-card {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  width: 400px;
+  text-align: center;
+  margin: 0 auto; /* Center the card */
+}
+
+/* Title Styles */
+.login-title {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #343a40;
+}
+
+/* Input Styles */
+.login-input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  box-sizing: border-box; /* Ensure padding does not affect width */
+}
+
+.login-input:focus {
+  border-color: #5aa91f;
+  box-shadow: 0 0 5px rgba(90, 169, 31, 0.5);
+  outline: none;
+}
+
+/* Button Styles */
+.login-button {
+  width: 100%;
+  padding: 12px;
+  background-color: #5aa91f;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.login-button:hover {
+  background-color: #4b9b16;
+  transform: translateY(-2px);
+}
+
+.login-button:active {
+  transform: translateY(0);
+}
+
+/* Error Message Styles */
+.login-error {
+  color: #dc3545;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+/* Spinner styles inside the login button */
+.login-button .fa-spinner {
+  margin: 0; /* Ensure spinner is centered */
+  color: #ffffff; /* Match button text color */
+}
+

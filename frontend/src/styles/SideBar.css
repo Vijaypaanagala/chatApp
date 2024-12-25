@@ -1,0 +1,32 @@
+/* Flexbox for the bell icon and notification badge container */
+.navbar-nav .nav-item {
+  display: flex;
+  align-items: center; /* Vertically align the items */
+  position: relative;  /* Needed for absolute positioning of the notification badge */
+}
+
+/* Notification badge style */
+.navbar-nav .nav-item .notification-badge {
+  position: absolute;
+  top: -5px;  /* Adjust as necessary to make it centered */
+  right: -5px; /* Fine-tune the position to stay near the bell icon */
+}
+
+/* Ensure bell icon and badge are aligned properly on small screens */
+@media (max-width: 768px) {
+  .navbar-nav .nav-item {
+    padding-right: 0; /* Ensure no additional padding for small screens */
+  }
+
+  /* Align the bell icon and badge */
+  .navbar-nav .nav-item .notification-badge {
+    right: -5px; /* Adjust to move the badge closer to the bell */
+  }
+}
+/* Prevent the bell icon from moving on small screens */
+@media (max-width: 768px) {
+  .navbar-nav .nav-item .fa-bell {
+    margin-left: 10px; /* Remove the right margin on small screens */
+  }
+}
+
