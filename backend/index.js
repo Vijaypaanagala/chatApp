@@ -31,9 +31,8 @@ io.on("connection", (socket) => {
 
   // Setup event for when a user connects
   socket.on("setup", (userData) => {
-    if(!userData) return
+    if (!userData) return;
     socket.join(userData._id);
-   
     socket.emit("connected");
   });
   
@@ -72,17 +71,12 @@ app.use(cors({
   methods: ['GET', 'POST'],  // Allowed HTTP methods
 }));
 
-
 // Use route handlers for user, chat, and message
 app.use('/api/user', userroute);
 app.use('/api/chat', chatroutes);
 app.use('/api/message', messageroutes);
 
 // Error Handling middlewares
-//---------------------------deployment------------------------
-
-
-//---------------------------deployment------------------------
 import path from 'path';
 import { fileURLToPath } from 'url';
 
@@ -105,11 +99,6 @@ if (isProduction) {
     res.send('API is running...');
   });
 }
-//---------------------------deployment------------------------
-
-
-
-//---------------------------deployment-----------------------
 
 // Connect to MongoDB and start the server with Socket.io
 mongoose.connect(mongoUrl)
