@@ -7,7 +7,7 @@
   "scripts": {
   "start": "node index.js", 
   "dev": "nodemon index.js", 
-  "build": "npm install --legacy-peer-deps --prefix backend && npm install --legacy-peer-deps --prefix frontend && npm run build --prefix frontend" 
+  "build": "npm install --prefix backend && npm install --prefix frontend && npm run build --prefix frontend"
 }
 ,
   "keywords": [],
