@@ -16,9 +16,10 @@ const server = http.createServer(app);
 // Integrate Socket.io with the server and configure ping timeout
 const io = new Server(server, {
   cors: {
-    origin: 'http://localhost:5173',  // Frontend URL
-    methods: ['GET', 'POST']
+    origin: ['http://localhost:5173', 'https://chatapp-10-1t4i.onrender.com'],  // List of allowed frontend URLs
+    methods: ['GET', 'POST']  // Allowed HTTP methods
   },
+  
   pingInterval: 25000,  
   pingTimeout: 60000,  
   maxHttpBufferSize: 1e6 
@@ -30,8 +31,9 @@ io.on("connection", (socket) => {
 
   // Setup event for when a user connects
   socket.on("setup", (userData) => {
-    socket.join(userData._id);
     if(!userData) return
+    socket.join(userData._id);
+   
     socket.emit("connected");
   });
   
