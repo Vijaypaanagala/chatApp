@@ -75,7 +75,37 @@ app.use('/api/chat', chatroutes);
 app.use('/api/message', messageroutes);
 
 // Error Handling middlewares
+//---------------------------deployment------------------------
 
+
+//---------------------------deployment------------------------
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+const isProduction = process.argv.includes('--production'); // Check for production flag
+
+if (isProduction) {
+  // Serve static files from the frontend build directory
+  app.use(express.static(path.join(__dirname, '../frontend/dist')));
+
+  // Catch-all route to serve the React frontend
+  app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, '../frontend/dist', 'index.html'));
+  });
+} else {
+  // Development mode
+  app.get('/', (req, res) => {
+    res.send('API is running...');
+  });
+}
+//---------------------------deployment------------------------
+
+
+
+//---------------------------deployment-----------------------
 
 // Connect to MongoDB and start the server with Socket.io
 mongoose.connect(mongoUrl)

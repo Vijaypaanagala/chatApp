@@ -67,7 +67,7 @@ function MyChats({fetchAgain}) {
           authorization: `Bearer ${user.token}`,
         },
       };
-      SetLoading(true);
+      // SetLoading(true);
       const { data } = await axios.get('http://localhost:3000/api/chat', config);
       SetLoading(false);
       setChats(data);

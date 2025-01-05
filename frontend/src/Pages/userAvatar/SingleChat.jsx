@@ -112,6 +112,7 @@ function SingleChat({ fetchAgain, setFetchAgain }) {
       );
       socket.emit('new message', data);
       setMsgArray((prev) => [...prev, data]);
+      setFetchAgain(!fetchAgain)
     } catch (error) {
       console.error('Error sending message:', error.message);
     }
