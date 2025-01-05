@@ -66,8 +66,10 @@ io.on("connection", (socket) => {
 // Middleware to parse JSON data
 app.use(express.json());
 app.use(cors({
-  origin: 'http://localhost:5173' // Frontend URL for CORS
+  origin: ['http://localhost:5173', 'https://chatapp-10-1t4i.onrender.com'],  // Array of allowed origins
+  methods: ['GET', 'POST'],  // Allowed HTTP methods
 }));
+
 
 // Use route handlers for user, chat, and message
 app.use('/api/user', userroute);
