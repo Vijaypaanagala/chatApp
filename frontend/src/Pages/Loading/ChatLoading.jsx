@@ -1,5 +1,5 @@
 import React from 'react'
-import '../../styles/ChatLoading.css'
+import '../../styles/chatLoading.css'
 function ChatLoading() {
   return (
     <div className="container mt-5">
