@@ -10,7 +10,7 @@ import { use } from 'react';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import LoadingSpinner from '../Loading/LoadingSpinner';
 
-const ENDPOINT = 'http://localhost:3000';
+const ENDPOINT = 'https://chatapp-10-1t4i.onrender.com';
 let socket, selectedChatCompare;
 
 function SingleChat({ fetchAgain, setFetchAgain }) {
