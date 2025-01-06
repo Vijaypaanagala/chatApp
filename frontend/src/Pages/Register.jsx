@@ -63,7 +63,7 @@ async function handleRegister() {
     localStorage.setItem("userInfo", JSON.stringify(res.data));
 
     // Redirect to the home page after successful registration
-    navigate("/");
+    navigate("/Home");
     window.location.reload()
   } catch (err) {
     console.error(err.response?.data?.error || "An error occurred");
@@ -74,49 +74,60 @@ async function handleRegister() {
 
   return (
     <div className="register-container">
-      <div className="register-card">
-        <h2 className="register-title">Create Account</h2>
-        <input
-          type="text"
-          className="register-input"
-          placeholder="Name"
-          onChange={(e) => setName(e.target.value)}
-        />
-        <br />
-        <input
-          type="email"
-          className="register-input"
-          placeholder="Email"
-          onChange={(e) => setEmail(e.target.value)}
-        />
-        <br />
-        <input
-          type="password"
-          className="register-input"
-          placeholder="Password"
-          onChange={(e) => setPassword(e.target.value)}
-        />
-        <br />
-        <input
-          type="file"
-          accept="image/*"
-          className="register-input"
-          onChange={(e) => setImage(e.target.files[0])}
-        />
-        {error && <div className="register-error">{error}</div>} {/* Display error message */}
-        <button className="register-button" onClick={handleRegister} disabled={loading}>
-          {loading ? (
-            <FontAwesomeIcon icon={faSpinner} spin size="lg" />
-          ) : (
-            "Sign Up"
-          )}
-        </button>
-        <p style={{ marginTop: "20px" }}>
-          Already have an account? <Link to="/Login">Login</Link>
-        </p>
-      </div>
-     
-    </div>
+  <div className="register-card">
+    <h2 className="register-title">Create Account</h2>
+    <input
+      type="text"
+      id="name"
+      name="name"
+      className="register-input"
+      placeholder="Name"
+      onChange={(e) => setName(e.target.value)}
+      autoComplete="name"
+    />
+    <br />
+    <input
+      type="email"
+      id="email"
+      name="email"
+      className="register-input"
+      placeholder="Email"
+      onChange={(e) => setEmail(e.target.value)}
+      autoComplete="email"
+    />
+    <br />
+    <input
+      type="password"
+      id="password"
+      name="password"
+      className="register-input"
+      placeholder="Password"
+      onChange={(e) => setPassword(e.target.value)}
+      autoComplete="new-password"
+    />
+    <br />
+    <input
+      type="file"
+      id="profileImage"
+      name="profileImage"
+      accept="image/*"
+      className="register-input"
+      onChange={(e) => setImage(e.target.files[0])}
+    />
+    {error && <div className="register-error">{error}</div>} {/* Display error message */}
+    <button className="register-button" onClick={handleRegister} disabled={loading}>
+      {loading ? (
+        <FontAwesomeIcon icon={faSpinner} spin size="lg" />
+      ) : (
+        "Sign Up"
+      )}
+    </button>
+    <p style={{ marginTop: "20px" }} id="navtologin">
+      Already have an account? <Link to="/">Login</Link>
+    </p>
+  </div>
+</div>
+
   );
 }
 

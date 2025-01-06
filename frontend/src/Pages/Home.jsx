@@ -10,9 +10,9 @@ function Home() {
   const {user,selectedChat}=ChatState();
   const navigate=useNavigate();
 
-  if(!user){
-    navigate('/Login')
-  }
+  // if(!user){
+  //   navigate('/Login')
+  // }
   
   
   const [fetchAgain,setFetchAgain] =useState(false);
