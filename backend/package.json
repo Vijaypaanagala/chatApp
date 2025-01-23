@@ -5,7 +5,7 @@
   "type": "module",
   "main": "index.js",
   "scripts": {
-  "start": "node index.js --production",
+  "start": "node index.js ",
   "dev": "nodemon index.js", 
   "build": "npm install --legacy-peer-deps && npm install --prefix ../frontend --legacy-peer-deps && npm run build --prefix ../frontend"
 }
