@@ -83,7 +83,7 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const isProduction = process.argv.includes('--production'); // Check for production flag
+const isProduction = process.argv[2] === 'production'; // Check for production flag
 
 if (isProduction) {
   // Serve static files from the frontend build directory
