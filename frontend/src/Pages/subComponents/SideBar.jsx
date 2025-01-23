@@ -22,7 +22,7 @@ function SideBar() {
   const navigate = useNavigate();
   const handleLogout = () => {
     localStorage.removeItem("userInfo");
-    navigate("/");
+    navigate("/Login");
   };
    const handleClickUser= async (userId)=>{
     const config={

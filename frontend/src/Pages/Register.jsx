@@ -123,7 +123,7 @@ async function handleRegister() {
       )}
     </button>
     <p style={{ marginTop: "20px" }} id="navtologin">
-      Already have an account? <Link to="/">Login</Link>
+      Already have an account? <Link to="/Login">Login</Link>
     </p>
   </div>
 </div>
