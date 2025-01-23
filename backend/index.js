@@ -16,7 +16,7 @@ const server = http.createServer(app);
 // Integrate Socket.io with the server and configure ping timeout
 const io = new Server(server, {
   cors: {
-    origin: ['http://localhost:5173', 'https://chatapp-10-1t4i.onrender.com'],  // List of allowed frontend URLs
+    origin: ['http://localhost:5173', 'https://chatapp-f2ec.onrender.com'],  // List of allowed frontend URLs
     methods: ['GET', 'POST']  // Allowed HTTP methods
   },
   
@@ -67,7 +67,7 @@ io.on("connection", (socket) => {
 // Middleware to parse JSON data
 app.use(express.json());
 app.use(cors({
-  origin: ['http://localhost:5173', 'https://chatapp-10-1t4i.onrender.com'],  // Array of allowed origins
+  origin: ['http://localhost:5173', 'https://chatapp-f2ec.onrender.com'],  // Array of allowed origins
   methods: ['GET', 'POST'],  // Allowed HTTP methods
 }));
 
