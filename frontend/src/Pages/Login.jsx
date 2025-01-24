@@ -21,7 +21,7 @@ function Login() {
       console.log("Sending payload:", payload);
       setLoading(true); // Start loading spinner
       const { data: responseData } = await axios.post(
-        "http://localhost:3000/api/user/login",
+        "https://chatapp-f2ec.onrender.com/api/user/login",
         payload
       );
       setLoading(false); // Stop loading spinner
