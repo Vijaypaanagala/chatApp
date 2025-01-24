@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 
 const ChatContext = createContext();
 
@@ -13,12 +13,13 @@ const ChatProvider = ({ children }) => {
   const [chats, setChats] = useState([]);
 
   const navigate = useNavigate();
+  const location = useLocation(); // To get the current route
 
   useEffect(() => {
-    if (!user) {
-      navigate("/Login"); // Redirect to Login if no user found
+    if (!user && location.pathname !== "/signup") {
+      navigate("/Login"); // Redirect to Login if no user and not on Signup page
     }
-  }, [user, navigate]);
+  }, [user, navigate, location.pathname]);
 
   return (
     <ChatContext.Provider
