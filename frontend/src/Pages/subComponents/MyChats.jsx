@@ -52,7 +52,7 @@ function MyChats({fetchAgain}) {
               authorization:`Bearer ${user.token}`
             }
           }
-          console.log(user.token)
+          
           setLoading(true);
           const {data}=await axios.get(`https://chatapp-f2ec.onrender.com/api/user?search=${search}`,config);
           setSearchResults(data);
@@ -96,7 +96,7 @@ function MyChats({fetchAgain}) {
       },
     };
   
-    console.log(user.token);
+    
     setLoading(true);
   
     try {
@@ -110,7 +110,7 @@ function MyChats({fetchAgain}) {
       );
   
       setChats([data, ...chats]);
-      console.log(data);
+ 
       setLoading(false);
       setShowProfile(false);
   
@@ -123,7 +123,7 @@ function MyChats({fetchAgain}) {
     }
   };
   
-console.log(chats)
+
   return (
     <div className="container" style={{height:'90vh'}}>
       {/* Header Section */}

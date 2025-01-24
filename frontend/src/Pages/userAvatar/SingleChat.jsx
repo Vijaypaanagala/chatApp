@@ -64,7 +64,7 @@ function SingleChat({ fetchAgain, setFetchAgain }) {
       socket.off('message received');
     };
   }, [notification, fetchAgain, selectedChatCompare]);
-  console.log(notification)
+ 
 
   useEffect(() => {
     fetchMessages();

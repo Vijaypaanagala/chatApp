@@ -57,7 +57,7 @@ async function handleRegister() {
 
     // Make the API request to register the user
     const res = await axios.post("https://chatapp-f2ec.onrender.com/api/user/register", data);
-    console.log("User registered successfully:", res.data);
+ 
 
     // Store the complete user information in localStorage
     localStorage.setItem("userInfo", JSON.stringify(res.data));

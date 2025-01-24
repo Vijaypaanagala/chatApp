@@ -31,13 +31,12 @@ function SideBar() {
         authorization:`Bearer ${user.token}`
       }
     }
-    console.log(user.token)
+    
     setLoading(true);
     const { data } = await axios.post('https://chatapp-f2ec.onrender.com/api/chat', { userId }, config);
 
     if (!chats.find((c) => c._id === data._id)) setChats([data, ...chats]);
     setSelectedChat(data);
-    console.log(data);
     setLoading(false);
     const offcanvasElement = document.getElementById("offcanvasSearch");
     if (offcanvasElement) {
@@ -54,11 +53,11 @@ function SideBar() {
         authorization:`Bearer ${user.token}`
       }
     }
-    console.log(user.token)
+    
     setLoading(true);
     const {data}=await axios.get(`https://chatapp-f2ec.onrender.com/api/user?search=${search}`,config);
     setresults(data);
-    console.log(data);
+   
     setLoading(false);
   } 
   const getUser = (loggedUser, users) =>
