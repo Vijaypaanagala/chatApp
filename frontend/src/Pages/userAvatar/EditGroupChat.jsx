@@ -21,7 +21,7 @@ function EditGroupChat({ fetchAgain, setFetchAgain }) {
         },
       };
       const { data } = await axios.put(
-        'http://localhost:3000/api/chat/rename',
+        'https://chatapp-f2ec.onrender.com/api/chat/rename',
         { chatId: selectedChat._id, chatName: groupName },
         config
       );
@@ -43,7 +43,7 @@ function EditGroupChat({ fetchAgain, setFetchAgain }) {
       };
       setLoading(true);
       const { data } = await axios.get(
-        `http://localhost:3000/api/user?search=${search}`,
+        `https://chatapp-f2ec.onrender.com/api/user?search=${search}`,
         config
       );
       setSearchResults(data);
@@ -70,7 +70,7 @@ function EditGroupChat({ fetchAgain, setFetchAgain }) {
         },
       };
       const { data } = await axios.put(
-        'http://localhost:3000/api/chat/AddGroup',
+        'https://chatapp-f2ec.onrender.com/api/chat/AddGroup',
         { chatId: selectedChat._id, userId: user1._id },
         config
       );
@@ -93,7 +93,7 @@ function EditGroupChat({ fetchAgain, setFetchAgain }) {
         },
       };
       const { data } = await axios.put(
-        'http://localhost:3000/api/chat/RemoveGroup',
+        'https://chatapp-f2ec.onrender.com/api/chat/RemoveGroup',
         { chatId: selectedChat._id, userId: user1._id },
         config
       );

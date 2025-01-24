@@ -54,7 +54,7 @@ function MyChats({fetchAgain}) {
           }
           console.log(user.token)
           setLoading(true);
-          const {data}=await axios.get(`http://localhost:3000/api/user?search=${search}`,config);
+          const {data}=await axios.get(`https://chatapp-f2ec.onrender.com/api/user?search=${search}`,config);
           setSearchResults(data);
           setLoading(false);
   }
@@ -68,7 +68,7 @@ function MyChats({fetchAgain}) {
         },
       };
       // SetLoading(true);
-      const { data } = await axios.get('http://localhost:3000/api/chat', config);
+      const { data } = await axios.get('https://chatapp-f2ec.onrender.com/api/chat', config);
       SetLoading(false);
       setChats(data);
     } catch (error) {
@@ -101,7 +101,7 @@ function MyChats({fetchAgain}) {
   
     try {
       const { data } = await axios.post(
-        "http://localhost:3000/api/chat/group",
+        "https://chatapp-f2ec.onrender.com/api/chat/group",
         {
           name: GroupName,
           users: selectedusers.map((u) => u._id), 

@@ -33,7 +33,7 @@ function SideBar() {
     }
     console.log(user.token)
     setLoading(true);
-    const { data } = await axios.post('http://localhost:3000/api/chat', { userId }, config);
+    const { data } = await axios.post('https://chatapp-f2ec.onrender.com/api/chat', { userId }, config);
 
     if (!chats.find((c) => c._id === data._id)) setChats([data, ...chats]);
     setSelectedChat(data);
@@ -56,7 +56,7 @@ function SideBar() {
     }
     console.log(user.token)
     setLoading(true);
-    const {data}=await axios.get(`http://localhost:3000/api/user?search=${search}`,config);
+    const {data}=await axios.get(`https://chatapp-f2ec.onrender.com/api/user?search=${search}`,config);
     setresults(data);
     console.log(data);
     setLoading(false);

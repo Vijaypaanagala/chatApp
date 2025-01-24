@@ -81,7 +81,7 @@ function SingleChat({ fetchAgain, setFetchAgain }) {
         },
       };
       const { data } = await axios.get(
-        `http://localhost:3000/api/message/${selectedChat._id}`,
+        `https://chatapp-f2ec.onrender.com/api/message/${selectedChat._id}`,
         config
       );
       setMsgArray(data);
@@ -103,7 +103,7 @@ function SingleChat({ fetchAgain, setFetchAgain }) {
       };
       setMessage('');
       const { data } = await axios.post(
-        'http://localhost:3000/api/message',
+        'https://chatapp-f2ec.onrender.com/api/message',
         {
           content: message,
           chatId: selectedChat._id,
