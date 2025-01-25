@@ -75,7 +75,7 @@ async function handleRegister() {
   return (
     <div className="register-container">
   <div className="register-card">
-    <h2 className="register-title">Create Account</h2>
+    <h2 className="register-title">Sign Up</h2>
     <input
       type="text"
       id="name"
@@ -106,6 +106,23 @@ async function handleRegister() {
       autoComplete="new-password"
     />
     <br />
+    <label
+  htmlFor="profileImage"
+  className="register-label"
+  style={{
+    float: 'left',
+    fontSize: '16px',
+    fontWeight: 'bold',
+    color: '#555', // Subtle gray color
+    marginBottom: '-3px',
+    marginTop: '5px',
+    display: 'block', // Ensures it stays above the input
+    padding: '5px 0',
+  }}
+>
+  Upload your profile picture
+</label>
+
     <input
       type="file"
       id="profileImage"
